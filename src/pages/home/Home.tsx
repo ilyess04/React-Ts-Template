@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { HomeTemplate } from "../../templates";
+import { LangContext } from "../../lang/provider/Provider";
 
 const Home = (): JSX.Element => {
-  return <HomeTemplate />;
+  const lang = useContext(LangContext);
+  return <HomeTemplate lang={lang} />;
 };
 export default Home;
