@@ -6,5 +6,8 @@ interface IAuthReducer {
   refreshToken?: string;
   user?: IUser;
 }
-export type { IAuthReducer };
+interface ISettingReducer {
+  lang: string;
+}
+export type { IAuthReducer, ISettingReducer };
 export type IRootState = ReturnType<typeof store.getState>;

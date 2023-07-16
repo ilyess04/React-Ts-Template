@@ -2,4 +2,12 @@ import AuthReducer, {
   setCredentials,
   resetCredentials,
 } from "./authReducer/AuthReducer";
-export { AuthReducer, setCredentials, resetCredentials };
+import SettingReducer, { setLang } from "./settingReducer/SettingReducer";
+
+export {
+  AuthReducer,
+  setCredentials,
+  resetCredentials,
+  SettingReducer,
+  setLang,
+};

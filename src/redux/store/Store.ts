@@ -1,7 +1,4 @@
-import {
-  combineReducers,
-  configureStore,
-} from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import {
   persistReducer,
   persistStore,
@@ -14,16 +11,17 @@ import {
 } from "reduxjs-toolkit-persist";
 import storage from "reduxjs-toolkit-persist/lib/storage";
 import ReduxLogger from "redux-logger";
-import { AuthReducer } from "../reducers";
+import { AuthReducer, SettingReducer } from "../reducers";
 
 const persistConfig = {
   key: "root",
   storage: storage,
-  blackList: ["auth"],
+  blackList: ["auth", "setting"],
 };
 
 const reducers = combineReducers({
   auth: AuthReducer,
+  setting: SettingReducer,
 });
 
 const _persistedReducer = persistReducer(persistConfig, reducers);
