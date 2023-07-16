@@ -1,3 +1,4 @@
+import { store } from "../../redux";
 import { IUser } from "../user";
 
 interface IAuthReducer {
@@ -6,3 +7,4 @@ interface IAuthReducer {
   user?: IUser;
 }
 export type { IAuthReducer };
+export type IRootState = ReturnType<typeof store.getState>;
