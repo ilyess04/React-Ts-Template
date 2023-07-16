@@ -1,2 +1,3 @@
-import { AuthAPI } from "./auth/authApi";
-export { AuthAPI };
+import { AuthAPI } from "./auth/AuthApi";
+import { DashboardAPI } from "./dashboard/DashboardApi";
+export { AuthAPI, DashboardAPI };
