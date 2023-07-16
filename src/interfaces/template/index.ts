@@ -4,6 +4,7 @@ interface ILoginTemplate {
   authState: IAuthState;
   setAuthState: React.Dispatch<React.SetStateAction<IAuthState>>;
   onForgotPassword: Function;
-  onSubmit:Function;
+  onSubmit: Function;
 }
-export type { ILoginTemplate };
+interface IHomeTemplate {}
+export type { ILoginTemplate, IHomeTemplate };

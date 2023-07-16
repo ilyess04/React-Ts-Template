@@ -1,6 +1,10 @@
 import { ILoginTemplate } from "../../interfaces";
 
-const LoginTemplate = (props: ILoginTemplate): JSX.Element => {
+const LoginTemplate = ({
+  authState,
+  setAuthState,
+  ...props
+}: ILoginTemplate): JSX.Element => {
   return <></>;
 };
 export default LoginTemplate;

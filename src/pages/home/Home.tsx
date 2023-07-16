@@ -1,4 +1,6 @@
+import { HomeTemplate } from "../../templates";
+
 const Home = (): JSX.Element => {
-  return <></>;
+  return <HomeTemplate />;
 };
 export default Home;
