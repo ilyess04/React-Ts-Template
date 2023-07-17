@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosResponse } from "axios";
+import { AxiosInstance, AxiosResponse } from "axios";
 import { Config } from "../../common";
 import { handleHeaders } from "../../common/functions/HandleHeaders";
 import { tokenEnum } from "../../enums";
