@@ -1,15 +1,17 @@
-import axios, { AxiosInstance, AxiosResponse } from "axios";
+import { AxiosInstance, AxiosResponse } from "axios";
 import { Config } from "../../common";
 import { IAuthState } from "../../interfaces/state";
 import { handleHeaders } from "../../common/functions/HandleHeaders";
 import { tokenEnum } from "../../enums";
+import { getApiAxios } from "../../common/functions/GetApiAxios";
 
 class AuthAPI {
   _api: AxiosInstance;
   constructor() {
-    this._api = axios.create({
-      baseURL: Config.getInstance().API_URL + "/auth",
+    this._api = getApiAxios({
+      baseUrl: Config.getInstance().API_URL + "/auth",
       headers: handleHeaders(tokenEnum.noToken),
+      isRefreshToken: false,
     });
   }
 

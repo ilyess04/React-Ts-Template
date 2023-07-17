@@ -2,13 +2,15 @@ import axios, { AxiosInstance, AxiosResponse } from "axios";
 import { Config } from "../../common";
 import { handleHeaders } from "../../common/functions/HandleHeaders";
 import { tokenEnum } from "../../enums";
+import { getApiAxios } from "../../common/functions/GetApiAxios";
 
 class DashboardAPI {
   _api: AxiosInstance;
   constructor() {
-    this._api = axios.create({
-      baseURL: Config.getInstance().API_URL + "/dashboard",
+    this._api = getApiAxios({
+      baseUrl: Config.getInstance().API_URL + "/dashboard",
       headers: handleHeaders(tokenEnum.accessToken),
+      isRefreshToken: true,
     });
   }
 

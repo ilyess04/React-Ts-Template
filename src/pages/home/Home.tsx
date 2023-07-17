@@ -15,7 +15,7 @@ const Home = (): JSX.Element => {
   const handleGetDashboardData = async () => {
     try {
       const response = await dashboardApi.getDashboardData();
-      if (response.status == HttpStatusCode.Ok) {
+      if (response.status === HttpStatusCode.Ok) {
       } else {
         // toast error
       }
