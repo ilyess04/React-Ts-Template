@@ -16,6 +16,6 @@ export const handleRefresh = async (): Promise<Response> => {
   }
 };
 
-export function nukeStore() {
+export function nulleStore() {
   store.dispatch(resetCredentials());
 }
