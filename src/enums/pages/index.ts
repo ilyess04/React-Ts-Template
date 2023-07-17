@@ -1,4 +1,5 @@
 enum DocumentTitle {
+  appTitle="React-Ts-Template",
   login = "Login",
   home = "Home",
 }
