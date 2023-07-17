@@ -1,6 +1,6 @@
-enum tokenEnum {
+enum TokenEnum {
   noToken = "noToken",
   accessToken = "accessToken",
   refreshToken = "refreshToken",
 }
-export { tokenEnum };
+export { TokenEnum };
