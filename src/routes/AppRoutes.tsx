@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { IRootState } from "../interfaces";
 import PublicRoute from "./publicRoute/PublicRoute";
 import PrivateRoute from "./privateRoute/PrivateRoute";
+import { LangProvider } from "../providers";
 
 const AppRoute = (): JSX.Element => {
   const auth = useSelector((state: IRootState) => state?.auth);
@@ -25,30 +26,32 @@ const AppRoute = (): JSX.Element => {
     );
   }
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          element={
-            <PublicRouteRender>
-              <PublicRoute />
-            </PublicRouteRender>
-          }
-        >
-          <Route path="/login" element={<Login />} />
-        </Route>
-        <Route
-          element={
-            <PrivateRouteRender>
-              <PrivateRoute />
-            </PrivateRouteRender>
-          }
-        >
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/dashboard" element={<Home />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <LangProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            element={
+              <PublicRouteRender>
+                <PublicRoute />
+              </PublicRouteRender>
+            }
+          >
+            <Route path="/login" element={<Login />} />
+          </Route>
+          <Route
+            element={
+              <PrivateRouteRender>
+                <PrivateRoute />
+              </PrivateRouteRender>
+            }
+          >
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/dashboard" element={<Home />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </LangProvider>
   );
 };
 
