@@ -2,17 +2,15 @@ import { Provider } from "react-redux";
 import { persistor, store } from "./redux";
 import { PersistGate } from "reduxjs-toolkit-persist/integration/react";
 import AppRoute from "./routes/AppRoutes";
-import { useEffect } from "react";
-import { DocumentTitle } from "./enums";
+import { LangProvider } from "./providers";
 
 function App() {
-  useEffect(() => {
-    document.title = DocumentTitle.appTitle;
-  });
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <AppRoute />
+        <LangProvider>
+          <AppRoute />
+        </LangProvider>
       </PersistGate>
     </Provider>
   );

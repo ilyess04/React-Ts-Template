@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { IRootState } from "../interfaces";
 import PublicRoute from "./publicRoute/PublicRoute";
 import PrivateRoute from "./privateRoute/PrivateRoute";
-import { LangProvider } from "../providers";
 
 const AppRoute = (): JSX.Element => {
   const auth = useSelector((state: IRootState) => state?.auth);
@@ -26,7 +25,6 @@ const AppRoute = (): JSX.Element => {
     );
   }
   return (
-    <LangProvider>
       <BrowserRouter>
         <Routes>
           <Route
@@ -51,7 +49,6 @@ const AppRoute = (): JSX.Element => {
           </Route>
         </Routes>
       </BrowserRouter>
-    </LangProvider>
   );
 };
 
