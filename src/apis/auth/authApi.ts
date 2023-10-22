@@ -6,14 +6,11 @@ import { TokenEnum } from "../../enums";
 import { getApiAxios } from "../../common/functions/GetApiAxios";
 
 class AuthAPI {
-  _api: AxiosInstance;
-  constructor() {
-    this._api = getApiAxios({
-      baseUrl: Config.getInstance().API_URL + "/auth",
-      headers: handleHeaders(TokenEnum.noToken),
-      isRefreshToken: false,
-    });
-  }
+  _api: AxiosInstance = getApiAxios({
+    baseUrl: Config.getInstance().API_URL + "/auth",
+    headers: handleHeaders(TokenEnum.noToken),
+    isRefreshToken: false,
+  });
 
   async login(payload: IAuthState): Promise<AxiosResponse> {
     return await this._api.post("/login", payload);
