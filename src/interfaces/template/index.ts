@@ -11,4 +11,4 @@ interface ILoginTemplate extends IDefaultTemplate {
   onSubmit: Function;
 }
 interface IHomeTemplate extends IDefaultTemplate {}
-export type { ILoginTemplate, IHomeTemplate };
+export type { ILoginTemplate, IHomeTemplate, IDefaultTemplate };

@@ -1,12 +1,11 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { HomeTemplate } from "../../templates";
-import { LangContext } from "../../lang/provider/Provider";
 import { DashboardAPI } from "../../apis";
 import { HttpStatusCode } from "axios";
 import { DocumentTitle } from "../../enums";
+import { IDefaultTemplate } from "../../interfaces";
 
-const Home = (): JSX.Element => {
-  const lang = useContext(LangContext);
+const Home = ({ lang }: IDefaultTemplate): JSX.Element => {
   const dashboardApi = new DashboardAPI();
 
   useEffect(() => {
