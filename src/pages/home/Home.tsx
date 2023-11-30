@@ -2,14 +2,11 @@ import { useEffect } from "react";
 import { HomeTemplate } from "../../templates";
 import { DashboardAPI } from "../../apis";
 import { HttpStatusCode } from "axios";
-import { DocumentTitle } from "../../enums";
-import { IDefaultTemplate } from "../../interfaces";
 
-const Home = ({ lang }: IDefaultTemplate): JSX.Element => {
+const Home = (): JSX.Element => {
   const dashboardApi = new DashboardAPI();
 
   useEffect(() => {
-    document.title = DocumentTitle.home;
     handleGetDashboardData();
   }, []);
 
@@ -17,13 +14,12 @@ const Home = ({ lang }: IDefaultTemplate): JSX.Element => {
     try {
       const response = await dashboardApi.getDashboardData();
       if (response.status === HttpStatusCode.Ok) {
-      } else {
-        // toast error
+        // set Dashboard data state ....
       }
     } catch (err) {
       // toast error
     }
   };
-  return <HomeTemplate lang={lang} />;
+  return <HomeTemplate />;
 };
 export default Home;

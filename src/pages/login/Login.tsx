@@ -7,10 +7,10 @@ import { AuthAPI } from "../../apis";
 import { HttpStatusCode } from "axios";
 import { setCredentials } from "../../redux";
 import { useDispatch } from "react-redux";
-import { IAuthReducer, IDefaultTemplate } from "../../interfaces";
+import { IAuthReducer } from "../../interfaces";
 import { DocumentTitle } from "../../enums";
 
-const Login = ({ lang }: IDefaultTemplate): JSX.Element => {
+const Login = (): JSX.Element => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const authApi = new AuthAPI();
@@ -34,7 +34,6 @@ const Login = ({ lang }: IDefaultTemplate): JSX.Element => {
   };
   return (
     <LoginTemplate
-      lang={lang}
       authState={authState}
       setAuthState={setAuthState}
       onForgotPassword={() => {
