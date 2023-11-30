@@ -1,3 +1,3 @@
-import LoginTemplate from "./login/LoginTemplate";
-import HomeTemplate from "./home/HomeTemplate";
+import LoginTemplate from "./login/Login";
+import HomeTemplate from "./home/Home";
 export { LoginTemplate, HomeTemplate };
