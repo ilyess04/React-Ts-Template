@@ -1,9 +1,9 @@
 import { AxiosInstance, AxiosResponse } from "axios";
 import { Config } from "../../common";
-import { IAuthState } from "../../interfaces/state";
 import { handleHeaders } from "../../common/functions/HandleHeaders";
 import { TokenEnum } from "../../enums";
 import { getApiAxios } from "../../common/functions/GetApiAxios";
+import { ILoginState } from "../../interfaces";
 
 class AuthAPI {
   _api: AxiosInstance = getApiAxios({
@@ -12,7 +12,7 @@ class AuthAPI {
     isRefreshToken: false,
   });
 
-  async login(payload: IAuthState): Promise<AxiosResponse> {
+  async login(payload: ILoginState): Promise<AxiosResponse> {
     return await this._api.post("/login", payload);
   }
   async refreshToken(): Promise<AxiosResponse> {
