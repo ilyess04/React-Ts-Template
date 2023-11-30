@@ -36,8 +36,17 @@ const LoginTemplate = ({
             }
             value={state.password}
             type={EInputTypes.password}
-            placeholder={tr("enterYourEmail")}
+            placeholder={tr("enterYourPassword")}
           />
+          <div className="d-flex justify-center">
+            <button
+              style={{ borderRadius: "40px", width: "220px", height: "40px" }}
+              className="ds-bg-primary ds-black-color ds-font-poppins"
+              onClick={onSubmit}
+            >
+              {tr("login")}
+            </button>
+          </div>
         </div>
       </div>
     </div>
