@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ILoginState } from "../../interfaces/state";
 import { INIT_LOGIN_STATE } from "../../consts";
 import { LoginTemplate } from "../../templates";
-import { AuthAPI } from "../../apis";
 import { useAuthentification } from "../../common/customHooks";
 
 const Login = (): JSX.Element => {

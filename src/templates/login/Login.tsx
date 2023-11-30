@@ -14,7 +14,7 @@ const LoginTemplate = ({
     <div className="w-100 container-fluid">
       <div className="row">
         <div className="col-md-6 col-12 d-none d-md-block p-5">
-          <img src={reactLogo} />
+          <img alt="logo" src={reactLogo} />
         </div>
         <div className="col-md-6 col-12 py-5">
           <PageTitle className="mb-2" size={30} title={tr("login")} />
