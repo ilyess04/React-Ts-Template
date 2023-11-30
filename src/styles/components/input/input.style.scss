@@ -1,0 +1,26 @@
+.ds-input {
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    border: 1px solid $black;
+    background: $white;
+    color: $black;
+    font-family: "Poppins";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0px 25px;
+}
+.ds-auth-icon-password-rtl {
+    left: 19px;
+}
+.ds-auth-icon-password-not-rtl {
+    right: 19px;
+}
+.ds-auth-icon-password {
+    position: absolute;
+    cursor: pointer;
+    top: 3px;
+    font-size: 22px;
+}

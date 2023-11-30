@@ -1,11 +1,12 @@
 import { reactLogo } from "../../assets";
 import { useTranslation } from "../../common/customHooks";
-import { PageTitle } from "../../components";
+import { Input, PageTitle } from "../../components";
+import { EInputTypes } from "../../enums";
 import { ILoginTemplate } from "../../interfaces";
 
 const LoginTemplate = ({
-  authState,
-  setAuthState,
+  state,
+  onChangeState,
   onSubmit,
 }: ILoginTemplate): JSX.Element => {
   const { tr } = useTranslation();
@@ -17,25 +18,26 @@ const LoginTemplate = ({
         </div>
         <div className="col-md-6 col-12 py-5">
           <PageTitle className="mb-2" size={30} title={tr("login")} />
-          <div className="mb-2">
-            <input
-              value={authState.email}
-              placeholder={tr("enterYourEmail")}
-              onChange={(e) =>
-                setAuthState({ ...authState, email: e.target.value })
-              }
-            />
-          </div>
-          <div className="mb-2">
-            <input
-              type="password"
-              value={authState.password}
-              placeholder={tr("enterYourPassword")}
-              onChange={(e) =>
-                setAuthState({ ...authState, password: e.target.value })
-              }
-            />
-          </div>
+          <Input
+            className="mb-2"
+            onChange={(value) =>
+              typeof value === "string" &&
+              onChangeState({ ...state, email: value })
+            }
+            value={state.email}
+            type={EInputTypes.email}
+            placeholder={tr("enterYourEmail")}
+          />
+          <Input
+            className="mb-2"
+            onChange={(value) =>
+              typeof value === "string" &&
+              onChangeState({ ...state, password: value })
+            }
+            value={state.password}
+            type={EInputTypes.password}
+            placeholder={tr("enterYourEmail")}
+          />
         </div>
       </div>
     </div>

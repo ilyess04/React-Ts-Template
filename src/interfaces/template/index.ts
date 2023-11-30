@@ -5,8 +5,8 @@ interface IDefaultTemplate {
   lang: IKeys;
 }
 interface ILoginTemplate {
-  authState: ILoginState;
-  setAuthState: React.Dispatch<React.SetStateAction<ILoginState>>;
+  state: ILoginState;
+  onChangeState: React.Dispatch<React.SetStateAction<ILoginState>>;
   onSubmit: Function;
 }
 interface IHomeTemplate {}

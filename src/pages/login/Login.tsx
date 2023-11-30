@@ -27,8 +27,8 @@ const Login = (): JSX.Element => {
   };
   return (
     <LoginTemplate
-      authState={authState}
-      setAuthState={setAuthState}
+      state={authState}
+      onChangeState={setAuthState}
       onSubmit={handleSubmit}
     />
   );

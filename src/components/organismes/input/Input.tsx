@@ -47,7 +47,7 @@ const Input = ({
             isRtl
               ? "ds-auth-icon-password-rtl"
               : "ds-auth-icon-password-not-rtl"
-          } ds-auth-icon-password ds-grey-strok-color`}
+          } ds-auth-icon-password ds-black-color`}
         >
           {changedType === EInputTypes.password ? (
             <i
