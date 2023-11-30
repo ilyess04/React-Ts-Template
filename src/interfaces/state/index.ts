@@ -1,5 +1,5 @@
-interface IAuthState {
+interface ILoginState {
   email: string;
   password: string;
 }
-export type { IAuthState };
+export type { ILoginState };

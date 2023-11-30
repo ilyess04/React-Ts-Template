@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { IAuthState } from "../../interfaces/state";
-import { INIT_AUTH_STATE } from "../../consts";
+import { ILoginState } from "../../interfaces/state";
+import { INIT_LOGIN_STATE } from "../../consts";
 import { LoginTemplate } from "../../templates";
 import { AuthAPI } from "../../apis";
 import { HttpStatusCode } from "axios";
 import { DocumentTitle } from "../../enums";
 
 const Login = (): JSX.Element => {
-  const navigate = useNavigate();
   const authApi = new AuthAPI();
-  const [authState, setAuthState] = useState<IAuthState>(INIT_AUTH_STATE);
+  const [authState, setAuthState] = useState<ILoginState>(INIT_LOGIN_STATE);
 
   useEffect(() => {
     document.title = DocumentTitle.login;
@@ -19,7 +17,7 @@ const Login = (): JSX.Element => {
     try {
       const response = await authApi.login(authState);
       if (response.status === HttpStatusCode.Ok) {
-        // set store data        
+        // set store data
       } else {
         // toast error
       }
@@ -31,9 +29,6 @@ const Login = (): JSX.Element => {
     <LoginTemplate
       authState={authState}
       setAuthState={setAuthState}
-      onForgotPassword={() => {
-        navigate("forgot-password");
-      }}
       onSubmit={handleSubmit}
     />
   );

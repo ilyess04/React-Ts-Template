@@ -1,13 +1,12 @@
 import { IKeys } from "../common";
-import { IAuthState } from "../state";
+import { ILoginState } from "../state";
 
 interface IDefaultTemplate {
   lang: IKeys;
 }
 interface ILoginTemplate {
-  authState: IAuthState;
-  setAuthState: React.Dispatch<React.SetStateAction<IAuthState>>;
-  onForgotPassword: Function;
+  authState: ILoginState;
+  setAuthState: React.Dispatch<React.SetStateAction<ILoginState>>;
   onSubmit: Function;
 }
 interface IHomeTemplate {}
