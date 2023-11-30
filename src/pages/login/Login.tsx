@@ -5,13 +5,9 @@ import { INIT_AUTH_STATE } from "../../consts";
 import { LoginTemplate } from "../../templates";
 import { AuthAPI } from "../../apis";
 import { HttpStatusCode } from "axios";
-import { setCredentials } from "../../redux";
-import { useDispatch } from "react-redux";
-import { IAuthReducer } from "../../interfaces";
 import { DocumentTitle } from "../../enums";
 
 const Login = (): JSX.Element => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const authApi = new AuthAPI();
   const [authState, setAuthState] = useState<IAuthState>(INIT_AUTH_STATE);
@@ -23,8 +19,7 @@ const Login = (): JSX.Element => {
     try {
       const response = await authApi.login(authState);
       if (response.status === HttpStatusCode.Ok) {
-        const data: IAuthReducer = response.data;
-        dispatch(setCredentials(data));
+        // set store data        
       } else {
         // toast error
       }

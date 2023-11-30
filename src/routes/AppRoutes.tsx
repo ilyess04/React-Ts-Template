@@ -1,12 +1,11 @@
+import { useAuthentification } from "../common/customHooks";
 import { BrowserRouter, Routes, Navigate, Route } from "react-router-dom";
 import { Login, Home } from "../pages";
-import { useSelector } from "react-redux";
-import { IRootState } from "../interfaces";
 import PublicRoute from "./publicRoute/PublicRoute";
 import PrivateRoute from "./privateRoute/PrivateRoute";
 
 const AppRoute = (): JSX.Element => {
-  const auth = useSelector((state: IRootState) => state?.auth);
+  const { auth } = useAuthentification();
 
   function PrivateRouteRender(props: any) {
     return auth?.accessToken === undefined &&
