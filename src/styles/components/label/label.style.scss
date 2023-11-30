@@ -1,0 +1,25 @@
+.ds-label {
+    color: $black;
+}
+
+.ds-obligatory-label {
+    color: $danger;
+}
+
+.ds-label,
+.ds-obligatory-label {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: "Poppins";
+    line-height: normal;
+
+}
+
+@media (max-width:768px) {
+
+    .ds-label,
+    .ds-obligatory-label {
+        font-size: 12px;
+    }
+}

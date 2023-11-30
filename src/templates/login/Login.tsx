@@ -16,7 +16,26 @@ const LoginTemplate = ({
           <img src={reactLogo} />
         </div>
         <div className="col-md-6 col-12 py-5">
-          <PageTitle size={30} title={tr("login")} />
+          <PageTitle className="mb-2" size={30} title={tr("login")} />
+          <div className="mb-2">
+            <input
+              value={authState.email}
+              placeholder={tr("enterYourEmail")}
+              onChange={(e) =>
+                setAuthState({ ...authState, email: e.target.value })
+              }
+            />
+          </div>
+          <div className="mb-2">
+            <input
+              type="password"
+              value={authState.password}
+              placeholder={tr("enterYourPassword")}
+              onChange={(e) =>
+                setAuthState({ ...authState, password: e.target.value })
+              }
+            />
+          </div>
         </div>
       </div>
     </div>
