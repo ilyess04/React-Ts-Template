@@ -6,9 +6,9 @@
 /* Urls css */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
 @import url("https://fonts.googleapis.com/css?family=Poppins");
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "react-toastify/dist/ReactToastify.css";
 
 /* Abstracts && Common && Components Scss */
-@import './abstracts/index.scss';
-@import './common/index.scss';
-@import './components/index.scss';
+@import "./abstracts/index.scss";
+@import "./components/index.scss";

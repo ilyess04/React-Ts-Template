@@ -1,2 +1,3 @@
 import Label from "./label/Label";
-export { Label };
+import Checkbox from "./checkbox/Checkbox";
+export { Label, Checkbox };

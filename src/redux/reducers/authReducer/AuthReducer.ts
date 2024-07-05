@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IAuthReducer } from "../../../interfaces";
-import { INIT_AUTH_REDUCER_STATE } from "../../../consts";
+import { INIT_AUTH_REDUCER_STATE } from "../../../common/consts";
 
 const AuthReducer = createSlice({
   name: "auth",
@@ -9,12 +9,12 @@ const AuthReducer = createSlice({
     setCredentials(state: IAuthReducer, action) {
       state.accessToken = action.payload.accessToken;
       state.refreshToken = action.payload.refreshToken;
-      state.user = action.payload.user;
+      state.userId = action.payload.userId;
     },
     resetCredentials: (state: IAuthReducer) => {
       state.accessToken = undefined;
       state.refreshToken = undefined;
-      state.user = undefined;
+      state.userId = undefined;
     },
   },
 });

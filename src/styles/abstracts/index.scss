@@ -1,5 +1,78 @@
-$primary: #52c2df;
-$secondary: #61dafb;
-$black: #000000;
-$white: #fff;
-$danger: #FF0B0B;
+:root {
+  --primary-color: #003f62;
+  --secondary-color: #ecf4fc;
+  --black-color: #000;
+  --white-color: #fff;
+  --text-color: #696974;
+  --danger-color: #FF0000
+}
+
+.dark-theme {
+  --primary-color: #3ab4a0;
+  --secondary-color: #1d2939;
+  --white-color: #1d2727;
+  --black-color: #fff;
+}
+
+/* TOGGLED COLORS */
+$primary: var(--primary-color);
+$secondary: var(--secondary-color);
+$black: var(--black-color);
+$white: var(--white-color);
+$gray: var(--text-color);
+$danger: var(--danger-color);
+
+
+/* COMMON CLASSES */
+.ds-primary-color {
+  color: $primary !important;
+}
+
+.ds-secondary-color {
+  color: $secondary !important;
+}
+
+.ds-black-color {
+  color: $black !important;
+}
+
+.ds-white-color {
+  color: $white !important;
+}
+
+.ds-gray-color {
+  color: $gray !important;
+}
+
+.ds-bg-primary {
+  background-color: $primary !important;
+}
+
+.ds-bg-secondary {
+  background-color: $secondary !important;
+}
+
+.ds-bg-black {
+  background-color: $black !important;
+}
+
+.ds-bg-white {
+  background-color: $white !important;
+}
+
+.ds-bg-gray {
+  background-color: $gray !important;
+}
+
+.ds-bg-danger {
+  background-color: $danger !important;
+}
+
+.ds-font-poppins {
+  font-family: "Poppins" !important;
+}
+
+body {
+  color: $black;
+  background-color: $white;
+}

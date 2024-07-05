@@ -1,6 +1,5 @@
 class Config {
-  SOCKET_URL = "";
-  API_URL = "http//localhsot:8080";
+  API_URL = "https://e-com-template-backend.onrender.com";
 
   private static instance: Config;
   public static getInstance(): Config {
@@ -11,4 +10,4 @@ class Config {
   }
 }
 
-export { Config };
+export default Config;

@@ -1,14 +1,14 @@
 import { RawAxiosRequestHeaders } from "axios";
-import { TokenEnum } from "../../enums";
+import { EToken } from "../enums";
 import { store } from "../../redux";
 
-export function handleHeaders(tokenType: TokenEnum): RawAxiosRequestHeaders {
+export function handleHeaders(tokenType: EToken): RawAxiosRequestHeaders {
   let headers: RawAxiosRequestHeaders = {
     "Content-Type": "application/json",
   };
-  if (tokenType !== TokenEnum.noToken) {
+  if (tokenType !== EToken.noToken) {
     const { accessToken, refreshToken } = getAuthState();
-    if (accessToken && tokenType === TokenEnum.accessToken) {
+    if (accessToken && tokenType === EToken.accessToken) {
       headers = {
         "Content-Type": "application/json",
         Authorization: `Bearer ${accessToken}`,

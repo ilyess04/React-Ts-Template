@@ -2,7 +2,11 @@ import AuthReducer, {
   setCredentials,
   resetCredentials,
 } from "./authReducer/AuthReducer";
-import SettingReducer, { setLang } from "./settingReducer/SettingReducer";
+import SettingReducer, {
+  setLang,
+  setSidebarState,
+  setTheme,
+} from "./settingReducer/SettingReducer";
 
 export {
   AuthReducer,
@@ -10,4 +14,6 @@ export {
   resetCredentials,
   SettingReducer,
   setLang,
+  setSidebarState,
+  setTheme,
 };

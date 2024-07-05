@@ -10,4 +10,15 @@ interface ICommonComponent {
   className?: string;
   style?: React.CSSProperties;
 }
-export type { IKeys, IPageProps, ICommonComponent };
+interface ICommonLayout {
+  children: React.ReactNode;
+}
+type TLangTranslate = (key: string) => string;
+
+export type {
+  IKeys,
+  IPageProps,
+  ICommonComponent,
+  ICommonLayout,
+  TLangTranslate,
+};

@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Elang } from "../../../enums";
+import { ETheme, Elang } from "../../../common/enums";
 import { ISettingReducer } from "../../../interfaces";
 
 const initiaState: ISettingReducer = {
   lang: Elang.en,
+  theme: ETheme.light,
+  isCollapsedSidebar: false,
 };
 
 const SettingReducer = createSlice({
@@ -13,9 +15,15 @@ const SettingReducer = createSlice({
     setLang: (state: ISettingReducer, action) => {
       state.lang = action.payload;
     },
+    setSidebarState(state: ISettingReducer, action) {
+      state.isCollapsedSidebar = action.payload;
+    },
+    setTheme: (state: ISettingReducer, action) => {
+      state.theme = action.payload;
+    },
   },
 });
 
-export const { setLang } = SettingReducer.actions;
+export const { setLang, setSidebarState, setTheme } = SettingReducer.actions;
 
 export default SettingReducer.reducer;

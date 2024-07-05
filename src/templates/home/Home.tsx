@@ -1,27 +1,16 @@
-import { useAuthentification, useTranslation } from "../../common/customHooks";
-import { IHomeTemplate } from "../../interfaces";
+import { Button } from "../../components";
+import { useAuthentification, useTranslation } from "../../customHooks";
 
-const HomeTemplate = ({ ...props }: IHomeTemplate): JSX.Element => {
+const HomeTemplate = (): JSX.Element => {
   const { tr } = useTranslation();
-  const auth = useAuthentification();
+  const { logout } = useAuthentification();
   return (
-    <div style={{ fontSize: "50px" }} className="d-flex justify-center py-5">
-      <div>
-        <div className="mb-3">{tr("helloWorld")}</div>
-        <div>
-          <button
-            style={{
-              borderRadius: "40px",
-              width: "220px",
-              height: "40px",
-              fontSize: "25px",
-            }}
-            className="ds-bg-primary ds-black-color ds-font-poppins"
-            onClick={() => auth.logout()}
-          >
-            {tr("logout")}
-          </button>
-        </div>
+    <div className="d-flex justify-center py-5">
+      <div className="w-50">
+        <Button className="mb-2" title={tr("openModal")} onClick={() => {}} />
+        <Button className="mb-2" title={tr("openDrawer")} onClick={() => {}} />
+        <Button className="mb-2" title={tr("selectLanguage")} onClick={() => {}} />
+        <Button className="ds-bg-danger" title={tr("logout")} onClick={logout} />
       </div>
     </div>
   );

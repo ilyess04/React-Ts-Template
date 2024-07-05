@@ -1,2 +1,3 @@
 import LangContext from "./langContext/LangContext";
-export { LangContext };
+import ThemeContext from "./themeContext/ThemeContext";
+export { LangContext, ThemeContext };

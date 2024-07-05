@@ -1,6 +1,6 @@
-import { useAuthentification } from "../common/customHooks";
+import { useAuthentification } from "../customHooks";
 import { BrowserRouter, Routes, Navigate, Route } from "react-router-dom";
-import { Login, Home } from "../pages";
+import { Login, Home, ForgotPassword, ResetPassword } from "../pages";
 import PublicRoute from "./publicRoute/PublicRoute";
 import PrivateRoute from "./privateRoute/PrivateRoute";
 
@@ -10,14 +10,14 @@ const AppRoute = (): JSX.Element => {
   function PrivateRouteRender(props: any) {
     return auth?.accessToken === undefined &&
       auth?.refreshToken === undefined &&
-      auth?.user === undefined ? (
+      auth?.userId === undefined ? (
       <Navigate to="/login" />
     ) : (
       props.children
     );
   }
   function PublicRouteRender(props: any) {
-    return !auth?.accessToken && !auth?.refreshToken && !auth?.user ? (
+    return !auth?.accessToken && !auth?.refreshToken && !auth?.userId ? (
       props.children
     ) : (
       <Navigate to="/" />
@@ -34,6 +34,9 @@ const AppRoute = (): JSX.Element => {
           }
         >
           <Route path="/login" element={<Login />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
+          <Route path="/*" element={<></>} />
         </Route>
         <Route
           element={
@@ -43,7 +46,7 @@ const AppRoute = (): JSX.Element => {
           }
         >
           <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/*" element={<></>} />
         </Route>
       </Routes>
     </BrowserRouter>

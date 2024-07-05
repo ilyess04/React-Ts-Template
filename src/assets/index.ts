@@ -1,2 +1,3 @@
-import reactLogo from "./imgs/React-logo.png";
-export { reactLogo };
+import onlineShoppingImg from "./images/onlineShoppingImg.jpg";
+
+export { onlineShoppingImg };
