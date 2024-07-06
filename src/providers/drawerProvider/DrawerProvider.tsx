@@ -6,8 +6,6 @@ const DrawerProvider = (props: { children?: ReactNode }) => {
   const [children, setChildren] = useState<ReactNode | undefined>(undefined);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  console.log(isOpen);
-
   return (
     <DrawerContext.Provider
       value={{
@@ -19,6 +17,7 @@ const DrawerProvider = (props: { children?: ReactNode }) => {
       }}
     >
       <Drawer
+      className="ds-bg-white"
         direction="right"
         open={isOpen}
         size={window.innerWidth * 0.4}

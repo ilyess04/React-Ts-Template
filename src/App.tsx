@@ -1,7 +1,12 @@
 import { Provider } from "react-redux";
 import { persistor, store } from "./redux";
 import { PersistGate } from "reduxjs-toolkit-persist/integration/react";
-import { DrawerProvider, LangProvider, ThemeProvider } from "./providers";
+import {
+  DrawerProvider,
+  LangProvider,
+  ModalProvider,
+  ThemeProvider,
+} from "./providers";
 import { ToastContainer } from "react-toastify";
 import AppRoute from "./routes/AppRoutes";
 
@@ -12,8 +17,10 @@ function App() {
         <LangProvider>
           <ThemeProvider>
             <DrawerProvider>
-              <ToastContainer />
-              <AppRoute />
+              <ModalProvider>
+                <ToastContainer />
+                <AppRoute />
+              </ModalProvider>
             </DrawerProvider>
           </ThemeProvider>
         </LangProvider>

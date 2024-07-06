@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import {
   useLanguages,
   useSidebar,
-  useThemeMode,
+  useTheme,
   useTranslation,
 } from "../../../customHooks";
 import { DataTSX } from "../../../common";
@@ -18,7 +18,7 @@ import { Fragment } from "react";
 const CustomSidebar = () => {
   const { isCollapsed, toggleSidebarState } = useSidebar();
   const { tr } = useTranslation();
-  const { isDarkMode, toggleTheme } = useThemeMode();
+  const { isDarkMode, toggleTheme } = useTheme();
   const { isRtl } = useLanguages();
 
   return (

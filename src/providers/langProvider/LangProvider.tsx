@@ -7,7 +7,9 @@ export default function LangProvider(props: IPageProps): JSX.Element {
   const type = getLangData();
   return (
     <LangContext.Provider value={type}>
-      <div className="w-100 h-100" dir={isRtl ? "rtl":"ltr"}>{props.children}</div>
+      <div className="w-100 h-100" dir={isRtl ? "rtl" : "ltr"}>
+        {props.children}
+      </div>
     </LangContext.Provider>
   );
 }
