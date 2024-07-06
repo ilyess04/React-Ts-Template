@@ -3,24 +3,31 @@
   color: $primary;
   margin-top: 10px;
 }
+
 .ds-menu-label {
   font-size: large;
   font-family: "Poppins";
 }
+
 .ds-menu-root {
   height: 70%;
 }
+
 .ds-icon-transition {
   transition: transform 0.3s ease;
 }
+
 .ds-menu-button {
   background-color: $secondary;
 }
+
 .ds-sidebar-container {
   border-radius: 30px;
   overflow: hidden;
   height: 100vh;
+  border-color: $secondary !important;
 }
+
 .ps-sidebar-container {
   background-color: $secondary !important;
 }

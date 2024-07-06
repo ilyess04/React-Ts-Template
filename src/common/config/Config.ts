@@ -1,5 +1,5 @@
 class Config {
-  API_URL = "https://e-com-template-backend.onrender.com";
+  API_URL = "http://localhost:8000";
 
   private static instance: Config;
   public static getInstance(): Config {

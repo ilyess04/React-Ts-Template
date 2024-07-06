@@ -39,7 +39,7 @@ interface IAuthForm extends ICommonComponent {
 }
 interface IButton extends ICommonComponent {
   title: string;
-  onClick: () => void;
+  onClick?: () => void;
   isDisabled?: boolean;
 }
 interface ISidebarMenuItem {
