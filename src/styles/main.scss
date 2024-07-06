@@ -13,3 +13,9 @@
 /* Abstracts && Common && Components Scss */
 @import "./abstracts/index.scss";
 @import "./components/index.scss";
+
+body,
+.EZDrawer .EZDrawer__container {
+    color: $black;
+    background-color: $white;
+}
