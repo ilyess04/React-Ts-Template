@@ -26,9 +26,9 @@ const CustomSidebar = () => {
       collapsed={isCollapsed}
       breakPoint="lg"
       rtl={isRtl}
-      className="ds-sidebar-container m-2"
+      className="ds-sidebar-container"
     >
-      <Menu className="ds-menu-root ds-menu-icon ds-menu-label">
+      <Menu className="ds-menu-root ds-menu-icon ds-menu-label my-3">
         {DataTSX.getSidebarMenuItems(tr).map((item, index) => (
           <Fragment key={index}>
             {item.subItems && item.subItems.length > 0 ? (

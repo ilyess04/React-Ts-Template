@@ -5,7 +5,7 @@ const DashboardLayout = ({ children }: ICommonLayout) => {
   return (
     <div className="w-100 h-100 ds-bg-secondary">
       <Navbar />
-      <div className="flex row-content">
+      <div className="flex row-content p-2">
         <Sidebar />
         <div className="flex" style={{ flex: 1 }}>
           <div style={{ flex: 1, padding: "20px" }}>{children}</div>
