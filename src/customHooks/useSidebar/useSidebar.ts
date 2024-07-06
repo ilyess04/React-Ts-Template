@@ -9,11 +9,11 @@ const useSidebar = () => {
     (state: IRootState) => state.setting.isCollapsedSidebar
   );
 
-  const toggleSidebarState = () => {
+  const handleCollapseSidebar = () => {
     dispatch(setSidebarState(!isCollapsed));
   };
 
-  return { isCollapsed, toggleSidebarState };
+  return { isCollapsed, collapseSidebar: handleCollapseSidebar };
 };
 
 export default useSidebar;

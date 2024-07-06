@@ -21,7 +21,7 @@ const Input = ({
   return (
     <div
       style={{ position: "relative", ...style }}
-      className={`${className || ""} w-100`}
+      className={`${className} w-100`}
     >
       {label && (
         <Label

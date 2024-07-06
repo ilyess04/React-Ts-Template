@@ -17,17 +17,13 @@
   transition: transform 0.3s ease;
 }
 
-.ds-menu-button {
-  background-color: $secondary;
-}
-
 .ds-sidebar-container {
   border-radius: 30px;
   overflow: hidden;
   height: 100vh;
-  border-color: $secondary !important;
+  border-color: $white !important;
 }
 
 .ps-sidebar-container {
-  background-color: $secondary !important;
+  background-color: $white !important;
 }

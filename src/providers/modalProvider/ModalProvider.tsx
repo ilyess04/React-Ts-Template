@@ -23,7 +23,7 @@ const ModalProvider = (props: { children?: ReactNode }) => {
         onExit={() => setIsOpen(false)}
       >
         <Modal.Body
-          className="ds-bg-white"
+          className="ds-bg-secondary"
           style={{
             minHeight: window.innerHeight * 0.5,
             minWidth: window.innerWidth * 0.5,

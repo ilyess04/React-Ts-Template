@@ -17,7 +17,7 @@ const DrawerProvider = (props: { children?: ReactNode }) => {
       }}
     >
       <Drawer
-      className="ds-bg-white"
+      className="ds-bg-secondary"
         direction="right"
         open={isOpen}
         size={window.innerWidth * 0.4}

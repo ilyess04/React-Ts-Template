@@ -16,7 +16,7 @@ import { DataTSX } from "../../../common";
 import { Fragment } from "react";
 
 const CustomSidebar = () => {
-  const { isCollapsed, toggleSidebarState } = useSidebar();
+  const { isCollapsed, collapseSidebar } = useSidebar();
   const { tr } = useTranslation();
   const { isDarkMode, toggleTheme } = useTheme();
   const { isRtl } = useLanguages();
@@ -26,7 +26,7 @@ const CustomSidebar = () => {
       collapsed={isCollapsed}
       breakPoint="lg"
       rtl={isRtl}
-      className="ds-sidebar-container"
+      className="ds-sidebar-container m-2"
     >
       <Menu className="ds-menu-root ds-menu-icon ds-menu-label">
         {DataTSX.getSidebarMenuItems(tr).map((item, index) => (
@@ -36,7 +36,7 @@ const CustomSidebar = () => {
                 {item.subItems.map((subItem, subIndex) => (
                   <MenuItem
                     key={subIndex}
-                    className="ds-menu-button"
+                    className="ds-bg-white"
                     component={<Link to={subItem.link} />}
                   >
                     {tr(subItem.title)}
@@ -77,7 +77,7 @@ const CustomSidebar = () => {
               )}
             </div>
           }
-          onClick={toggleSidebarState}
+          onClick={collapseSidebar}
         >
           {tr("collapsePanel")}
         </MenuItem>
