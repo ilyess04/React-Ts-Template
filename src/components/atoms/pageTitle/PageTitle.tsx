@@ -8,7 +8,7 @@ const PageTitle = ({ className, style, title, size }: IPageTitle) => {
         fontSize: size ? `${size}px` : "24px",
         ...style,
       }}
-      className={`ds-font-poppins ${className || ""}`}
+      className={className}
     >
       {title}
     </div>

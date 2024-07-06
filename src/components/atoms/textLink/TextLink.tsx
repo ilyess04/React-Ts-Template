@@ -8,7 +8,7 @@ const TextLink = ({ className, style, linkText, href }: ITextLink) => {
         fontWeight: "bold",
         ...style,
       }}
-      className={`ds-font-poppins ${className || ""} ds-gray-color`}
+      className={`${className} ds-gray-color`}
     >
       <Link to={href} style={{ textDecoration: "underline" }}>
         {linkText}

@@ -3,7 +3,7 @@ import { ICommonLayout } from "../../interfaces";
 
 const DashboardLayout = ({ children }: ICommonLayout) => {
   return (
-    <div className="flex ds-bg-white">
+    <div className="flex row-content ds-bg-white">
       <div className="px-2 py-2">
         <Sidebar />
       </div>

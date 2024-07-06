@@ -9,7 +9,7 @@ const Button = ({ className, style, onClick, title, isDisabled }: IButton) => {
         opacity: isDisabled ? 0.5 : 1,
         ...style,
       }}
-      className={`ds-bg-primary ds-white-color ds-font-poppins w-100 ${className}`}
+      className={`ds-bg-primary ds-white-color w-100 ${className}`}
       disabled={isDisabled}
       onClick={onClick}
     >

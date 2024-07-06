@@ -13,7 +13,7 @@ const Checkbox = ({
         fontWeight: "bold",
         ...style,
       }}
-      className={`ds-font-poppins ${className || ""}`}
+      className={className}
     >
       <input
         type="checkbox"

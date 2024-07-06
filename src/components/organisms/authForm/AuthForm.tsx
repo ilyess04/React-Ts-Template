@@ -86,7 +86,7 @@ const AuthForm = ({
           />
         </>
       )}
-      <div className="justify-center d-flex">
+      <div className="justify-center flex">
         <Button onClick={onSubmit} title={Data.getAuthButtonTitle(tr, type)} />
       </div>
     </div>

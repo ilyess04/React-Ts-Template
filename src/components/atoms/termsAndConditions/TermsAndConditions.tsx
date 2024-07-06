@@ -2,10 +2,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "../../../customHooks";
 import { ICommonComponent } from "../../../interfaces";
 
-const TermsAndConditions = ({
-  className,
-  style,
-}: ICommonComponent) => {
+const TermsAndConditions = ({ className, style }: ICommonComponent) => {
   const { tr } = useTranslation();
   return (
     <div
@@ -15,7 +12,7 @@ const TermsAndConditions = ({
         margin: "auto",
         ...style,
       }}
-      className={`ds-font-poppins ${className || ""}`}
+      className={className}
     >
       {tr("bySubmittingThisFormYouAgreedToOurWebsite")}
       <Link to="#" style={{ textDecoration: "underline" }}>

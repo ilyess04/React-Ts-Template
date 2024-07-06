@@ -12,8 +12,8 @@ const HomeTemplate = (): JSX.Element => {
   const drawer = useDrawer();
   const modal = useModal();
   return (
-    <div className="d-flex justify-center py-5">
-      <div className="w-50">
+    <div className="flex justify-center py-5">
+      <div className="md:w-50 sm:w-80">
         <Button
           className="mb-2"
           title={tr("openModal")}

@@ -22,7 +22,12 @@ const CustomSidebar = () => {
   const { isRtl } = useLanguages();
 
   return (
-    <Sidebar collapsed={isCollapsed} className="ds-sidebar-container">
+    <Sidebar
+      collapsed={isCollapsed}
+      breakPoint="lg"
+      rtl={isRtl}
+      className="ds-sidebar-container"
+    >
       <Menu className="ds-menu-root ds-menu-icon ds-menu-label">
         {DataTSX.getSidebarMenuItems(tr).map((item, index) => (
           <Fragment key={index}>
