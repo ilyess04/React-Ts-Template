@@ -8,7 +8,7 @@ import {
   ThemeProvider,
 } from "./providers";
 import { ToastContainer } from "react-toastify";
-import AppRoute from "./routes/AppRoutes";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
             <DrawerProvider>
               <ModalProvider>
                 <ToastContainer />
-                <AppRoute />
+                <AppRoutes />
               </ModalProvider>
             </DrawerProvider>
           </ThemeProvider>

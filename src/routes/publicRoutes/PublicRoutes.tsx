@@ -2,7 +2,7 @@ import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { Authlayout } from "../../layouts";
 import { ForgotPassword, Login, ResetPassword } from "../../pages";
 
-const PublicRoute = (): JSX.Element => {
+const PublicRoutes = (): JSX.Element => {
   return (
     <Routes>
       <Route
@@ -22,4 +22,4 @@ const PublicRoute = (): JSX.Element => {
   );
 };
 
-export default PublicRoute;
+export default PublicRoutes;

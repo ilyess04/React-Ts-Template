@@ -2,7 +2,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import { DashboardLayout } from "../../layouts";
 import { Home } from "../../pages";
 
-const PrivateRoute = (): JSX.Element => {
+const PrivateRoutes = (): JSX.Element => {
   return (
     <Routes>
       <Route
@@ -19,4 +19,4 @@ const PrivateRoute = (): JSX.Element => {
   );
 };
 
-export default PrivateRoute;
+export default PrivateRoutes;
