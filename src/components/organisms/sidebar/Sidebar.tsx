@@ -25,7 +25,7 @@ const CustomSidebar = () => {
   return (
     <Sidebar
       className="ds-sidebar-container"
-      collapsed={isToggled ? false : isCollapsed}
+      collapsed={window.innerWidth >= 1024 ? isCollapsed : false}
       toggled={isToggled}
       breakPoint="lg"
       rtl={isRtl}
@@ -74,7 +74,7 @@ const CustomSidebar = () => {
                 transform: isCollapsed ? "rotate(0deg)" : "rotate(360deg)",
               }}
             >
-              {isCollapsed && !isRtl ? (
+              {isCollapsed ? (
                 <FaRegArrowAltCircleRight />
               ) : (
                 <FaRegArrowAltCircleLeft />
