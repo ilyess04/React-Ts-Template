@@ -30,5 +30,6 @@ const lang: IKeys = {
   openModal: "فتح مشروط",
   openDrawer: "درج مفتوح",
   selectLanguage: "اختار اللغة",
+  pageNotFound: "الصفحة غير موجودة",
 };
 export default lang;

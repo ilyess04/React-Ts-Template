@@ -15,7 +15,7 @@ const Authlayout = ({ children }: ICommonLayout): JSX.Element => {
             backgroundPosition: "center",
           }}
         />
-        <div className="py-5 col-md-6 col-12 flex align-items-center justify-center ds-bg-secondary">
+        <div className="py-5 col-md-6 col-12 flex align-items-center justify-center">
           <div>
             {children}
             <TermsAndConditions />

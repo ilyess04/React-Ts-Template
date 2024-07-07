@@ -3,7 +3,7 @@ import { ICommonLayout } from "../../interfaces";
 
 const DashboardLayout = ({ children }: ICommonLayout) => {
   return (
-    <div className="w-100 h-100 ds-bg-secondary">
+    <>
       <Navbar />
       <div className="flex row-content p-2">
         <Sidebar />
@@ -11,7 +11,7 @@ const DashboardLayout = ({ children }: ICommonLayout) => {
           <div style={{ flex: 1, padding: "20px" }}>{children}</div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

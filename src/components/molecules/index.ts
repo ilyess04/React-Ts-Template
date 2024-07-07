@@ -1,3 +1,4 @@
 import Label from "./label/Label";
 import Checkbox from "./checkbox/Checkbox";
-export { Label, Checkbox };
+import NotFoundPage from "./notFoundPage/NotFoundPage";
+export { Label, Checkbox, NotFoundPage };

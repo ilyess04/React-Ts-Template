@@ -30,5 +30,6 @@ const lang: IKeys = {
   openModal: "Open modal",
   openDrawer: "Open drawer",
   selectLanguage: "Select language",
+  pageNotFound: "Page not found",
 };
 export default lang;

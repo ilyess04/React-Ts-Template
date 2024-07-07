@@ -1,6 +1,7 @@
 import { Outlet, Route, Routes } from "react-router-dom";
 import { DashboardLayout } from "../../layouts";
 import { Home } from "../../pages";
+import { NotFoundPage } from "../../components";
 
 const PrivateRoutes = (): JSX.Element => {
   return (
@@ -13,7 +14,14 @@ const PrivateRoutes = (): JSX.Element => {
         }
       >
         <Route path="/" element={<Home />} />
-        <Route path="/*" element={<></>} />
+        <Route
+          path="/*"
+          element={
+            <div className="flex justify-center align-items-center h-100 w-100">
+              <NotFoundPage />
+            </div>
+          }
+        />
       </Route>
     </Routes>
   );
