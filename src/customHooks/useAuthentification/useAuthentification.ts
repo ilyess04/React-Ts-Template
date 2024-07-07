@@ -12,6 +12,6 @@ const useAuthentification = () => {
   const logout = () => {
     dispatch(resetCredentials());
   };
-  return { auth, setAuthStore, logout };
+  return { ...auth, setAuthStore, logout };
 };
 export default useAuthentification;

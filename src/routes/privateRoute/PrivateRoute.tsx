@@ -1,11 +1,21 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import { DashboardLayout } from "../../layouts";
+import { Home } from "../../pages";
 
 const PrivateRoute = (): JSX.Element => {
   return (
-    <DashboardLayout>
-      <Outlet />
-    </DashboardLayout>
+    <Routes>
+      <Route
+        element={
+          <DashboardLayout>
+            <Outlet />
+          </DashboardLayout>
+        }
+      >
+        <Route path="/" element={<Home />} />
+        <Route path="/*" element={<></>} />
+      </Route>
+    </Routes>
   );
 };
 
