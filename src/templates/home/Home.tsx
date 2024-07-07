@@ -25,11 +25,6 @@ const HomeTemplate = (): JSX.Element => {
           onClick={() => drawer.open()}
         />
         <Button
-          className="mb-2"
-          title={tr("selectLanguage")}
-          onClick={() => {}}
-        />
-        <Button
           className="ds-bg-danger"
           title={tr("logout")}
           onClick={logout}

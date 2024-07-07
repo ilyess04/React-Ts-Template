@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { reactLogoImage } from "../../../assets";
 import { CiMenuBurger } from "react-icons/ci";
 import { useSidebar } from "../../../customHooks";
+import SelectLangDropdown from "../selectLangDropdown/SelectLangDropdown";
 
 const CustomNavbar = (): JSX.Element => {
   const { toggleSidebar } = useSidebar();
@@ -24,6 +25,7 @@ const CustomNavbar = (): JSX.Element => {
           />
         </Link>
       </Navbar.Brand>
+      <SelectLangDropdown />
     </Navbar>
   );
 };

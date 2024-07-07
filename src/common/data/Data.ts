@@ -1,4 +1,6 @@
+import { arFlag, enFlag, frFlag } from "../../assets";
 import { TLangTranslate } from "../../interfaces";
+import { Elang } from "../enums";
 
 class Data {
   static getAuthButtonTitle(
@@ -26,6 +28,13 @@ class Data {
       case "resetPassword":
         return tr("resetYourPassword");
     }
+  }
+  static getDropDownLangData(tr: TLangTranslate) {
+    return [
+      { src: enFlag, label: tr("english"), value: Elang.en },
+      { src: frFlag, label: tr("french"), value: Elang.fr },
+      { src: arFlag, label: tr("arabic"), value: Elang.ar },
+    ];
   }
 }
 export default Data;

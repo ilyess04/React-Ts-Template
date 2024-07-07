@@ -29,7 +29,9 @@ const lang: IKeys = {
   users: "Utilisateurs",
   openModal: "Ouvrir modal",
   openDrawer: "Ouvrir tiroir",
-  selectLanguage: "Choisir la langue",
   pageNotFound: "Page non trouvée",
+  english: "Anglais",
+  french: "Français",
+  arabic: "Arabe",
 };
 export default lang;

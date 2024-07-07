@@ -29,7 +29,9 @@ const lang: IKeys = {
   users: "المستخدمون",
   openModal: "فتح مشروط",
   openDrawer: "درج مفتوح",
-  selectLanguage: "اختار اللغة",
   pageNotFound: "الصفحة غير موجودة",
+  english: "إنجليزي",
+  french: "فرنسي",
+  arabic: "عربي",
 };
 export default lang;

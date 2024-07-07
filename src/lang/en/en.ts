@@ -29,7 +29,9 @@ const lang: IKeys = {
   users: "Users",
   openModal: "Open modal",
   openDrawer: "Open drawer",
-  selectLanguage: "Select language",
   pageNotFound: "Page not found",
+  english: "English",
+  french: "French",
+  arabic: "Arabic",
 };
 export default lang;
