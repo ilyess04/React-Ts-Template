@@ -2,16 +2,18 @@ import { Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { reactLogoImage } from "../../../assets";
 import { CiMenuBurger } from "react-icons/ci";
+import { useSidebar } from "../../../customHooks";
 
 const CustomNavbar = (): JSX.Element => {
+  const { toggleSidebar } = useSidebar();
   return (
     <Navbar className="ds-bg-white flex justify-between px-3 py-1">
       <Navbar.Brand className="flex">
         <div className="flex align-items-center">
           <CiMenuBurger
             className="pe-2 ds-menu-icon cursor-pointer block lg:hidden"
-            size={35}
-            onClick={() => console.log("hello")}
+            size={30}
+            onClick={toggleSidebar}
           />
         </div>
         <Link to="/">

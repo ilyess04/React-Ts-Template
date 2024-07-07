@@ -17,7 +17,6 @@
 }
 
 .ds-sidebar-container {
-  border-radius: 30px;
   overflow: hidden;
   height: 100vh;
   border-color: $white !important;
@@ -25,4 +24,10 @@
 
 .ps-sidebar-container {
   background-color: $white !important;
+}
+
+@media (min-width:1024px) {
+  .ds-sidebar-container {
+    border-radius: 30px;
+  }
 }

@@ -16,17 +16,20 @@ import { DataTSX } from "../../../common";
 import { Fragment } from "react";
 
 const CustomSidebar = () => {
-  const { isCollapsed, collapseSidebar } = useSidebar();
+  const { isCollapsed, isToggled, toggleSidebar, collapseSidebar } =
+    useSidebar();
   const { tr } = useTranslation();
   const { isDarkMode, toggleTheme } = useTheme();
   const { isRtl } = useLanguages();
 
   return (
     <Sidebar
-      collapsed={isCollapsed}
+      className="ds-sidebar-container"
+      collapsed={isToggled ? false : isCollapsed}
+      toggled={isToggled}
       breakPoint="lg"
       rtl={isRtl}
-      className="ds-sidebar-container"
+      onBackdropClick={toggleSidebar}
     >
       <Menu className="ds-menu-root ds-menu-icon ds-menu-label my-3">
         {DataTSX.getSidebarMenuItems(tr).map((item, index) => (
@@ -63,6 +66,7 @@ const CustomSidebar = () => {
           {tr("toggleTheme")}
         </MenuItem>
         <MenuItem
+          className="hidden lg:block"
           icon={
             <div
               className="ds-icon-transition"

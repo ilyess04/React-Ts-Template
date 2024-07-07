@@ -10,6 +10,7 @@ interface ISettingReducer {
   lang: Elang;
   theme: ETheme;
   isCollapsedSidebar: boolean;
+  isToggledSidebar: boolean;
 }
 export type { IAuthReducer, ISettingReducer };
 export type IRootState = ReturnType<typeof store.getState>;

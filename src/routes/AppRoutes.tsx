@@ -5,6 +5,7 @@ import PrivateRoutes from "./privateRoutes/PrivateRoutes";
 
 const AppRoutes = (): JSX.Element => {
   const { accessToken, refreshToken, userId } = useAuthentification();
+
   return (
     <BrowserRouter>
       {accessToken && refreshToken && userId ? (
