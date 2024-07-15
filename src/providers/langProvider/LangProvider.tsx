@@ -1,8 +1,8 @@
-import { IPageProps } from "../../interfaces";
+import { ICommonLayout } from "../../interfaces";
 import { LangContext } from "../../common/contexts";
 import { useLanguages } from "../../customHooks";
 
-export default function LangProvider(props: IPageProps): JSX.Element {
+export default function LangProvider(props: ICommonLayout): JSX.Element {
   const { getLangData, isRtl } = useLanguages();
   const type = getLangData();
   return (

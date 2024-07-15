@@ -1,10 +1,10 @@
-import { IPageProps, IRootState } from "../../interfaces";
+import { ICommonLayout, IRootState } from "../../interfaces";
 import { ThemeContext } from "../../common/contexts";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { ETheme } from "../../common/enums";
 
-const ThemeProvider = (props: IPageProps) => {
+const ThemeProvider = (props: ICommonLayout) => {
   const theme: ETheme = useSelector((state: IRootState) => state.setting.theme);
   const isDarkMode = theme === "dark-theme";
 
