@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useMemo } from "react";
 import { useLanguages, useTranslation } from "../../../customHooks";
 import { Dropdown } from "react-bootstrap";
 import Avatar from "react-avatar";
@@ -7,6 +7,9 @@ import { Data } from "../../../common";
 const SelectLangDropdown = (): JSX.Element => {
   const { isRtl, getStoredLangFlag, changeLang } = useLanguages();
   const { tr } = useTranslation();
+
+  const data = useMemo(() => Data.getDropDownLangData(tr), [tr]);
+
   return (
     <Dropdown drop="down" align={isRtl ? "start" : "end"}>
       <Dropdown.Toggle
@@ -21,7 +24,7 @@ const SelectLangDropdown = (): JSX.Element => {
         children={<Avatar size="25" round src={getStoredLangFlag()} />}
       />
       <Dropdown.Menu>
-        {Data.getDropDownLangData(tr).map(({ src, label, value }, index) => (
+        {data.map(({ src, label, value }, index) => (
           <Dropdown.Item
             key={index}
             className="flex"

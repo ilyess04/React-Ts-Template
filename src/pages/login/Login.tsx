@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { ILoginState } from "../../interfaces/state";
 import { INIT_LOGIN_STATE } from "../../common/consts";
 import { LoginTemplate } from "../../templates";
@@ -13,7 +13,7 @@ const Login = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [state, setState] = useState<ILoginState>(INIT_LOGIN_STATE);
 
-  const handleSubmit = async () => {
+  const handleSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
       const response = await authApi.login(state);
@@ -35,7 +35,7 @@ const Login = (): JSX.Element => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [state, authApi, auth, tr]);
 
   return (
     <LoginTemplate

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { IForgotPasswordState } from "../../interfaces/state";
 import { INIT_FORGOTPASSWORD_STATE } from "../../common/consts";
 import { ForgotPasswordTemplate } from "../../templates";
@@ -14,7 +14,7 @@ const ForgotPassword = (): JSX.Element => {
     INIT_FORGOTPASSWORD_STATE
   );
 
-  const handleSubmit = async () => {
+  const handleSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
       await authApi.sendEmailReset(state);
@@ -25,7 +25,7 @@ const ForgotPassword = (): JSX.Element => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [authApi, state, tr]);
 
   return (
     <ForgotPasswordTemplate

@@ -13,7 +13,7 @@ import {
   useTranslation,
 } from "../../../customHooks";
 import { DataTSX } from "../../../common";
-import { Fragment } from "react";
+import { Fragment, useMemo } from "react";
 
 const CustomSidebar = () => {
   const { isCollapsed, isToggled, toggleSidebar, collapseSidebar } =
@@ -21,6 +21,8 @@ const CustomSidebar = () => {
   const { tr } = useTranslation();
   const { isDarkMode, toggleTheme } = useTheme();
   const { isRtl } = useLanguages();
+
+  const dataTsx = useMemo(() => DataTSX.getSidebarMenuItems(tr), [tr]);
 
   return (
     <Sidebar
@@ -32,7 +34,7 @@ const CustomSidebar = () => {
       onBackdropClick={toggleSidebar}
     >
       <Menu className="ds-menu-root ds-menu-icon ds-menu-label my-3">
-        {DataTSX.getSidebarMenuItems(tr).map((item, index) => (
+        {dataTsx.map((item, index) => (
           <Fragment key={index}>
             {item.subItems && item.subItems.length > 0 ? (
               <SubMenu key={index} label={tr(item.title)} icon={item.icon}>

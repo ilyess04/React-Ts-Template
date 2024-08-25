@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { IResetPasswordState } from "../../interfaces/state";
 import { INIT_RESETPASSWORD_STATE } from "../../common/consts";
@@ -17,7 +17,7 @@ const ResetPassword = (): JSX.Element => {
     INIT_RESETPASSWORD_STATE
   );
 
-  const handleSubmit = async () => {
+  const handleSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
       await authApi.resetPassword(token!, state);
@@ -29,7 +29,7 @@ const ResetPassword = (): JSX.Element => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [authApi, token, state, tr, navigate]);
 
   return (
     <ResetPasswordTemplate

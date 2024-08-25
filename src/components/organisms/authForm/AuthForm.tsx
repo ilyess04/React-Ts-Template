@@ -5,6 +5,7 @@ import { Button, PageTitle, TextLink } from "../../atoms";
 import { Input } from "..";
 import { Data } from "../../../common";
 import { Checkbox } from "../../molecules";
+import { useMemo } from "react";
 
 const AuthForm = ({
   className,
@@ -21,6 +22,16 @@ const AuthForm = ({
   onSubmit,
 }: IAuthForm): JSX.Element => {
   const { tr } = useTranslation();
+
+  const authPageTitle = useMemo(
+    () => Data.getAuthFormTitle(tr, type),
+    [tr, type]
+  );
+  const authButtontitle = useMemo(
+    () => Data.getAuthButtonTitle(tr, type),
+    [tr, type]
+  );
+
   return (
     <div
       className={`${className} mb-3`}
@@ -31,7 +42,7 @@ const AuthForm = ({
         ...style,
       }}
     >
-      <PageTitle className="mb-3" title={Data.getAuthFormTitle(tr, type)} />
+      <PageTitle className="mb-3" title={authPageTitle} />
       {(type === "login" || type === "forgotPassword") && (
         <Input
           className="mb-3"
@@ -87,7 +98,7 @@ const AuthForm = ({
         </>
       )}
       <div className="justify-center flex">
-        <Button onClick={onSubmit} title={Data.getAuthButtonTitle(tr, type)} />
+        <Button onClick={onSubmit} title={authButtontitle} />
       </div>
     </div>
   );
