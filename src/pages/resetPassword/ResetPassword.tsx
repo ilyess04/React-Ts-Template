@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { IResetPasswordState } from "../../interfaces/state";
 import { INIT_RESETPASSWORD_STATE } from "../../common/consts";
@@ -10,7 +10,7 @@ import { AuthAPI } from "../../apis";
 const ResetPassword = (): JSX.Element => {
   const { token } = useParams();
   const { tr } = useTranslation();
-  const authApi = new AuthAPI();
+  const authApi = useMemo(() => new AuthAPI(), []);
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [state, setState] = useState<IResetPasswordState>(

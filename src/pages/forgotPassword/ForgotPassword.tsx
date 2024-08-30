@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { IForgotPasswordState } from "../../interfaces/state";
 import { INIT_FORGOTPASSWORD_STATE } from "../../common/consts";
 import { ForgotPasswordTemplate } from "../../templates";
@@ -8,7 +8,7 @@ import { AuthAPI } from "../../apis";
 
 const ForgotPassword = (): JSX.Element => {
   const { tr } = useTranslation();
-  const authApi = new AuthAPI();
+  const authApi = useMemo(() => new AuthAPI(), []);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [state, setState] = useState<IForgotPasswordState>(
     INIT_FORGOTPASSWORD_STATE

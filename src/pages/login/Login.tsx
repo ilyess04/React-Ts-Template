@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { ILoginState } from "../../interfaces/state";
 import { INIT_LOGIN_STATE } from "../../common/consts";
 import { LoginTemplate } from "../../templates";
@@ -9,7 +9,7 @@ import { AuthAPI } from "../../apis";
 const Login = (): JSX.Element => {
   const { tr } = useTranslation();
   const auth = useAuthentification();
-  const authApi = new AuthAPI();
+  const authApi = useMemo(() => new AuthAPI(), []);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [state, setState] = useState<ILoginState>(INIT_LOGIN_STATE);
 
